@@ -17,9 +17,13 @@ class ViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
-    
+    //TableViewとコードの関連付け
     @IBOutlet weak var tableView: UITableView!
+    
+    //画面遷移
+    
 }
+
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -45,5 +49,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
+    //セルがタップされたときの処理
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard: UIStoryboard = self.storyboard!
+        let nextView = storyboard.instantiateViewController(withIdentifier: "next") as! NextViewController
+        self.present(nextView, animated: true, completion: nil)
+    }
 }
