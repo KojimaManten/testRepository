@@ -62,10 +62,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     //セルがタップされたときの処理を追加（画面遷移）
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard: UIStoryboard = self.storyboard!
-        let nextView = storyboard.instantiateViewController(withIdentifier: "next") as! NextViewController
-        nextView.sectionNumber = indexPath.section
-        nextView.rowNumber = indexPath.row
-        self.present(nextView, animated: true, completion: nil)
+        //Next.Storyboardをインスタンス化
+        let storyboard: UIStoryboard = UIStoryboard(name: "Next", bundle: nil)
+        //NextViewControllerをインスタンス化
+        guard let nextViewController = storyboard.instantiateInitialViewController() as? NextViewController else {
+            return
+        }
+        //画面遷移時に値を渡す
+        nextViewController.sectionNumber = indexPath.section
+        nextViewController.rowNumber = indexPath.row
+        //画面遷移実行
+        navigationController?.pushViewController(nextViewController, animated: true)
     }
 }

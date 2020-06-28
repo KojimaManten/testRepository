@@ -12,6 +12,7 @@ import WebKit
 class NextViewController: UIViewController {
     
     @IBOutlet weak var webView: WKWebView!
+    
     //ViewControllerからの値を受け取るプロパティ
     var sectionNumber: Int?
     var rowNumber: Int?
