@@ -24,8 +24,6 @@ class ViewController: UIViewController {
     let makerName = ["AstonMartin", "Lexus"]
     let astonName = ["DBX", "VANTAGE","DBS SUPERLEGGERA", "RAPIDE AMR"]
     let lexusName = ["LS", "GS", "GSF", "ES", "IS"]
-    
-    let nextViewController = NextViewController()
 }
 
 
@@ -66,8 +64,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard: UIStoryboard = self.storyboard!
         let nextView = storyboard.instantiateViewController(withIdentifier: "next") as! NextViewController
-        nextViewController.comeSection = indexPath.section
-        nextViewController.comeRow = indexPath.row
+        nextView.sectionNumber = indexPath.section
+        nextView.rowNumber = indexPath.row
         self.present(nextView, animated: true, completion: nil)
     }
 }

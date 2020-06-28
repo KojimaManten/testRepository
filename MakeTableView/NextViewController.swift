@@ -12,16 +12,16 @@ import WebKit
 class NextViewController: UIViewController {
     
     @IBOutlet weak var webView: WKWebView!
+    //ViewControllerからの値を受け取るプロパティ
+    var sectionNumber: Int?
+    var rowNumber: Int?
+    //アンラップ
     
-    var comeSection: Int = 0
-    var comeRow: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        
-        switch (comeSection, comeRow) {
+        switch (sectionNumber, rowNumber) {
         case (0, 0):
             urlStr = "https://www.astonmartin.com/ja/models/dbx"
             openURL("https://www.astonmartin.com/ja/models/dbx")
@@ -38,7 +38,7 @@ class NextViewController: UIViewController {
             urlStr = "https://www.astonmartin.com/ja/models/rapide-amr"
             openURL("https://www.astonmartin.com/ja/models/rapide-amr")
         case (1, 0):
-            urlStr = "aaa"
+            urlStr = "https://lexus.jp/models/ls/"
             openURL("https://lexus.jp/models/ls/")
         case (1, 1):
             urlStr = "https://lexus.jp/models/gs/"
