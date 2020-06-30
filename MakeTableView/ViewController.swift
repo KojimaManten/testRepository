@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomTableViewCell")
     }
     //TableViewとコードの関連付け
     @IBOutlet weak var tableView: UITableView!
@@ -41,12 +42,17 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
     //cellの中身を設定
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        //let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell
+        
         switch indexPath.section {
         case 0:
-            cell.textLabel?.text = astonName[indexPath.row]
+            //cell.textLabel?.text = astonName[indexPath.row]
+            cell.titleLabel.text = astonName[indexPath.row]
+            
         case 1:
-            cell.textLabel?.text = lexusName[indexPath.row]
+           // cell.textLabel?.text = lexusName[indexPath.row]
+            cell.titleLabel.text = lexusName[indexPath.row]
         default:
             return cell
         }
