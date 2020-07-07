@@ -16,7 +16,11 @@ class ViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "CustomTableViewCell")
+        
+        //Nibをコードで定義
+        //カスタムセルを登録
+        let nib = UINib(nibName: "CustomTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "CustomTableViewCell")
     }
     //TableViewとコードの関連付け
     @IBOutlet weak var tableView: UITableView!
@@ -25,6 +29,9 @@ class ViewController: UIViewController {
     let makerName = ["AstonMartin", "Lexus"]
     let astonName = ["DBX", "VANTAGE","DBS SUPERLEGGERA", "RAPIDE AMR"]
     let lexusName = ["LS", "GS", "GSF", "ES", "IS"]
+    let astonURL = ["https://www.astonmartin.com/ja/models/dbx", "https://www.astonmartin.com/ja/models/new-vantage", "https://www.astonmartin.com/ja/models/db11", "https://www.astonmartin.com/ja/models/dbs-superleggera", "https://www.astonmartin.com/ja/models/rapide-amr"]
+    let lexusURL = ["https://lexus.jp/models/ls/", "https://lexus.jp/models/gs/", "https://lexus.jp/models/gsf/", "https://lexus.jp/models/es/", "https://lexus.jp/models/is/"]
+    
 }
 
 
@@ -75,8 +82,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             return
         }
         //画面遷移時に値を渡す
-        nextViewController.sectionNumber = indexPath.section
-        nextViewController.rowNumber = indexPath.row
+        switch indexPath.section {
+        case 0:
+            nextViewController.nextURL = astonURL[indexPath.row]
+        case 1:
+            nextViewController.nextURL = lexusURL[indexPath.row]
+        default:
+            return
+        }
         //画面遷移実行
         navigationController?.pushViewController(nextViewController, animated: true)
     }

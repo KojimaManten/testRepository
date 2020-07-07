@@ -11,10 +11,10 @@
 		D1171D8924A5FF37005F7071 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C0419824A0E53A00FFC912 /* SceneDelegate.swift */; };
 		D1171D8A24A5FF3C005F7071 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C0419624A0E53A00FFC912 /* AppDelegate.swift */; };
 		D1171D8B24A5FF43005F7071 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1C0419A24A0E53A00FFC912 /* ViewController.swift */; };
-		D13D0C0124A8645C00B8D9FF /* Next.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13D0C0024A8645C00B8D9FF /* Next.storyboard */; };
+		D13C8E7524AF495A00AA16E0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D13C8E7424AF495A00AA16E0 /* GoogleService-Info.plist */; };
+		D13C8E7924AF4A4E00AA16E0 /* Next.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13C8E7824AF4A4E00AA16E0 /* Next.storyboard */; };
 		D15DBE6524AB343A00B59197 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15DBE6324AB343A00B59197 /* CustomTableViewCell.swift */; };
 		D15DBE6624AB343A00B59197 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D15DBE6424AB343A00B59197 /* CustomTableViewCell.xib */; };
-		D1AB7D0524A61AF10061BB01 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D1AB7D0424A61AF10061BB01 /* GoogleService-Info.plist */; };
 		D1AB7D0724A631A00061BB01 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AB7D0624A631A00061BB01 /* NextViewController.swift */; };
 		D1AB7D0924A63F810061BB01 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1AB7D0824A63F810061BB01 /* WebKit.framework */; };
 		D1C0419E24A0E53A00FFC912 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1C0419C24A0E53A00FFC912 /* Main.storyboard */; };
@@ -50,10 +50,10 @@
 /* Begin PBXFileReference section */
 		0298CD167B6002760447E16B /* Pods-MakeTableView.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MakeTableView.debug.xcconfig"; path = "Target Support Files/Pods-MakeTableView/Pods-MakeTableView.debug.xcconfig"; sourceTree = "<group>"; };
 		7A0CB9B80FCA1B1543AD63AF /* Pods_MakeTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MakeTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D13D0C0024A8645C00B8D9FF /* Next.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Next.storyboard; sourceTree = SOURCE_ROOT; };
+		D13C8E7424AF495A00AA16E0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D13C8E7824AF4A4E00AA16E0 /* Next.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Next.storyboard; sourceTree = "<group>"; };
 		D15DBE6324AB343A00B59197 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		D15DBE6424AB343A00B59197 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
-		D1AB7D0424A61AF10061BB01 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D1AB7D0624A631A00061BB01 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		D1AB7D0824A63F810061BB01 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		D1C0419324A0E53A00FFC912 /* MakeTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MakeTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -127,17 +127,17 @@
 		D1C0419524A0E53A00FFC912 /* MakeTableView */ = {
 			isa = PBXGroup;
 			children = (
-				D13D0C0024A8645C00B8D9FF /* Next.storyboard */,
 				D1C0419624A0E53A00FFC912 /* AppDelegate.swift */,
 				D15DBE6224AB33E900B59197 /* CustomTableViewCell */,
 				D1C0419824A0E53A00FFC912 /* SceneDelegate.swift */,
 				D1C0419A24A0E53A00FFC912 /* ViewController.swift */,
+				D13C8E7824AF4A4E00AA16E0 /* Next.storyboard */,
 				D1C0419C24A0E53A00FFC912 /* Main.storyboard */,
 				D1AB7D0624A631A00061BB01 /* NextViewController.swift */,
 				D1C0419F24A0E53D00FFC912 /* Assets.xcassets */,
 				D1C041A124A0E53D00FFC912 /* LaunchScreen.storyboard */,
 				D1C041A424A0E53D00FFC912 /* Info.plist */,
-				D1AB7D0424A61AF10061BB01 /* GoogleService-Info.plist */,
+				D13C8E7424AF495A00AA16E0 /* GoogleService-Info.plist */,
 			);
 			path = MakeTableView;
 			sourceTree = "<group>";
@@ -218,11 +218,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1C041A324A0E53D00FFC912 /* LaunchScreen.storyboard in Resources */,
-				D1AB7D0524A61AF10061BB01 /* GoogleService-Info.plist in Resources */,
 				D15DBE6624AB343A00B59197 /* CustomTableViewCell.xib in Resources */,
 				D1C041A024A0E53D00FFC912 /* Assets.xcassets in Resources */,
-				D13D0C0124A8645C00B8D9FF /* Next.storyboard in Resources */,
+				D13C8E7924AF4A4E00AA16E0 /* Next.storyboard in Resources */,
 				D1C0419E24A0E53A00FFC912 /* Main.storyboard in Resources */,
+				D13C8E7524AF495A00AA16E0 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
