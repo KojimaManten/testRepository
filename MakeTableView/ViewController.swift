@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ViewController: UIViewController {
 
@@ -51,6 +52,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //let cell = UITableViewCell()
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell
+        //cell.thumbView.image = UIImage(named: "")
+        cell.thumbView.kf.setImage(with: URL(string: "https://pbs.twimg.com/profile_images/1201406146822557696/ewFFvnAa_400x400.jpg")!)
+        
         
         switch indexPath.section {
         case 0:
