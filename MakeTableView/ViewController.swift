@@ -8,12 +8,15 @@
 
 import UIKit
 import Kingfisher
+import APIKit
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        sendRequest()
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -22,6 +25,25 @@ class ViewController: UIViewController {
         //カスタムセルを登録
         let nib = UINib(nibName: "CustomTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "CustomTableViewCell")
+    }
+    
+    var articles: [Article]?
+    
+    private func sendRequest()  {
+        let request = FetchQiitaArticleRequest(baseURL: URL(string: "https://qiita.com/api/v2")!)
+        
+            Session.send(request) { result in
+                switch result {
+                case .success(let response):
+                    //self.viewModel.articles = response
+                    print(response)
+                    self.articles = response
+                    self.tableView.reloadData()
+
+                case .failure(let error):
+                    print(error)
+                }
+            }
     }
     //TableViewとコードの関連付け
     @IBOutlet weak var tableView: UITableView!
@@ -41,7 +63,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return astonName.count
+            guard let articles = articles else { return 0 }
+                return articles.count
+            
         case 1:
             return lexusName.count
         default:
@@ -59,8 +83,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section {
         case 0:
             //cell.textLabel?.text = astonName[indexPath.row]
-            cell.titleLabel.text = astonName[indexPath.row]
-            
+            if let articles = articles {
+                cell.titleLabel.text = articles[indexPath.row].title
+            }
         case 1:
            // cell.textLabel?.text = lexusName[indexPath.row]
             cell.titleLabel.text = lexusName[indexPath.row]
@@ -88,7 +113,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         //画面遷移時に値を渡す
         switch indexPath.section {
         case 0:
-            nextViewController.nextURL = astonURL[indexPath.row]
+            if let articles = articles {
+                nextViewController.nextURL = articles[indexPath.row].url
+            }
         case 1:
             nextViewController.nextURL = lexusURL[indexPath.row]
         default:

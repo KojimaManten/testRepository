@@ -13,7 +13,7 @@ protocol QiitaAPI : Request {
 }
 
 extension QiitaAPI {
-    var baseURL: URL{
+    var baseURL: URL {
         return URL(string: "https://qiita.com/api/v2")!
     }
 }
