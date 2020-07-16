@@ -1,0 +1,5 @@
+#Carthageディレクトリを除外
+/Carthage
+
+#Podsディレクトリを除外
+/Pods/
