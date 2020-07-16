@@ -8,23 +8,22 @@
 
 import APIKit
 
-protocol QiitaAPI: Request {
+protocol QiitaAPI : Request {
     
 }
 
-
 extension QiitaAPI {
-    var baseURL: URL {
-        return URL(string: "https://qitta.com/api/v2")!
+    var baseURL: URL{
+        return URL(string: "https://qiita.com/api/v2")!
     }
 }
-
 
 extension QiitaAPI where Response: Decodable {
     var dataParser: DataParser {
         return DecodableDataParser()
     }
-    
+
+
     func response(from object: Any, urlResponse: HTTPURLResponse) throws -> Response {
 
         guard let data = object as? Data else {
@@ -33,9 +32,6 @@ extension QiitaAPI where Response: Decodable {
         return try JSONDecoder().decode(Response.self, from: data)
     }
 }
-
-
-
 
 
 
