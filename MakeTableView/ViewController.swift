@@ -12,6 +12,8 @@ import APIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -20,6 +22,8 @@ class ViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        searchBar.delegate = self
         
         //Nibをコードで定義
         //カスタムセルを登録
@@ -123,5 +127,27 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         }
         //画面遷移実行
         navigationController?.pushViewController(nextViewController, animated: true)
+    }
+}
+
+extension ViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchText = searchBar.text else { return }
+        search(searchText)
+    }
+    
+    func search(_ text: String) {
+        var newArray: [Article] = []
+        if articles != nil {
+            articles?.forEach({
+                if $0.title.contains(text) {
+                    newArray.insert($0, at: 0)
+                } else {
+                    newArray.append($0)
+                }
+            })
+            articles = newArray
+            tableView.reloadData()
+        }
     }
 }
