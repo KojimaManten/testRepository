@@ -154,6 +154,7 @@ extension ViewController: UISearchBarDelegate {
             })
             articles = newArray
             tableView.reloadData()
+            searchBar.endEditing(true)
         }
     }
 }
