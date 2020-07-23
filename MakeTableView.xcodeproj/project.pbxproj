@@ -146,12 +146,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		D1B4D77524C0450C004A5C5C /* Utils */ = {
+		D1B4D77524C0450C004A5C5C /* Utits */ = {
 			isa = PBXGroup;
 			children = (
 				D1B4D77624C0453E004A5C5C /* DecodableDataParser.swift */,
 			);
-			path = Utils;
+			path = Utits;
 			sourceTree = "<group>";
 		};
 		D1C0418A24A0E53A00FFC912 = {
@@ -175,7 +175,7 @@
 		D1C0419524A0E53A00FFC912 /* MakeTableView */ = {
 			isa = PBXGroup;
 			children = (
-				D1B4D77524C0450C004A5C5C /* Utils */,
+				D1B4D77524C0450C004A5C5C /* Utits */,
 				D1B3D9D124B7122E001FDFE2 /* Protocols */,
 				D1B3D9DF24B71826001FDFE2 /* Model */,
 				D1B3D9D624B71633001FDFE2 /* API */,

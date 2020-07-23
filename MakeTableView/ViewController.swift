@@ -13,11 +13,15 @@ import APIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBAction func gestureRecognizer(_ sender: Any) {
+        self.view.endEditing(true)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        //リクエスト実行！！！
         sendRequest()
         
         tableView.dataSource = self
@@ -31,8 +35,10 @@ class ViewController: UIViewController {
         tableView.register(nib, forCellReuseIdentifier: "CustomTableViewCell")
     }
     
-    var articles: [Article]?
     
+    //[Articles]のインスタンス化
+    var articles: [Article]?
+    // リクエストの定義！！！
     private func sendRequest()  {
         let request = FetchQiitaArticleRequest(baseURL: URL(string: "https://qiita.com/api/v2")!)
         

@@ -5,8 +5,8 @@
 //  Created by 小島満天 on 2020/07/09.
 //  Copyright © 2020 Manchen. All rights reserved.
 //
-
-
+import Foundation
+//レスポンスのデータ構造の定義！！！
 
 struct Article: Codable {
     let title: String

@@ -6,6 +6,9 @@
 //  Copyright © 2020 Manchen. All rights reserved.
 //
 
+//APIリクエストの定義！！！API使うときの共通部分プロトコル
+
+import Foundation
 import APIKit
 
 protocol QiitaAPI : Request {
