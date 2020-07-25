@@ -32,5 +32,6 @@
 	<string>1:652744722232:ios:8b028cbe7da7e41ca3a3cd</string>
 	<key>DATABASE_URL</key>
 	<string>https://firstfirebase-894dc.firebaseio.com</string>
+    <key>CFBundleURLTypes</key> <array> <dict> <key>CFBundleURLSchemes</key> <array> <string>fb2606577896337831</string> </array> </dict> </array> <key>FacebookAppID</key> <string>fb2606577896337831</string> <key>FacebookDisplayName</key> <string>MakeTableView</string>
 </dict>
 </plist>

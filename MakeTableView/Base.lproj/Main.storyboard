@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aJm-fY-LXf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9ft-9R-c2g">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MakeTableView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="view2" id="BYZ-38-t0r" customClass="ViewController" customModule="MakeTableView" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -50,9 +50,6 @@
                             <constraint firstItem="ood-nq-etC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wQq-fL-sxz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="gdv-Rf-ohL" appends="YES" id="pwY-A8-Owq"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="ceM-X3-9yX"/>
                     <connections>
@@ -61,31 +58,26 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="gdv-Rf-ohL">
-                    <connections>
-                        <action selector="gestureRecognizer:" destination="BYZ-38-t0r" id="ejI-Lr-Rbc"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4273.913043478261" y="114.50892857142857"/>
+            <point key="canvasLocation" x="7995.652173913044" y="101.78571428571428"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="bYT-RW-K1R">
+        <scene sceneID="Xyx-65-dTi">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aJm-fY-LXf" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9ft-9R-c2g" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wKy-wt-U2E">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="567-q4-fH6">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gtw-Oe-pSe"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="feh-km-qKl"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pAY-Yk-z2D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c2o-xD-bp7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3363.7681159420295" y="114.50892857142857"/>
+            <point key="canvasLocation" x="7085.507246376812" y="101.78571428571428"/>
         </scene>
     </scenes>
 </document>

@@ -9,14 +9,17 @@
 import UIKit
 import Kingfisher
 import APIKit
+import Firebase
+import FirebaseUI
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
-    @IBAction func gestureRecognizer(_ sender: Any) {
-        self.view.endEditing(true)
-    }
     
+    var authUI: FUIAuth { get { return FUIAuth.defaultAuthUI()! } }
+    //認証に使用するプロバイダの選択
+    let providers: [FUIAuthProvider] = [FUIGoogleAuth(), FUIFacebookAuth(), FUIPhoneAuth(authUI: FUIAuth.defaultAuthUI()!)]
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -33,14 +36,19 @@ class ViewController: UIViewController {
         //カスタムセルを登録
         let nib = UINib(nibName: "CustomTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "CustomTableViewCell")
+        
+        //authUIのデリゲート設定
+        self.authUI.delegate = self
+        self.authUI.providers = providers
+        
     }
     
     
     //[Articles]のインスタンス化
     var articles: [Article]?
     // リクエストの定義！！！
-    private func sendRequest()  {
-        let request = FetchQiitaArticleRequest(baseURL: URL(string: "https://qiita.com/api/v2")!)
+    private func sendRequest(_ searchText: String? = nil)  {
+        let request = FetchQiitaArticleRequest(baseURL: URL(string: "https://qiita.com/api/v2")!, query: searchText)
         
             Session.send(request) { result in
                 switch result {
@@ -139,10 +147,11 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
 extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let searchText = searchBar.text else { return }
-        search(searchText)
+       // search(searchText)
+        sendRequest(searchText)
     }
     
-    func search(_ text: String) {
+   func search(_ text: String) {
         var newArray: [Article] = []
         if articles != nil {
             articles?.forEach({
@@ -155,6 +164,14 @@ extension ViewController: UISearchBarDelegate {
             articles = newArray
             tableView.reloadData()
             searchBar.endEditing(true)
+        }
+    }
+}
+
+extension ViewController: FUIAuthDelegate {
+    public func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
+        if error == nil {
+            self.performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
         }
     }
 }

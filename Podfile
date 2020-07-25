@@ -8,5 +8,10 @@ target 'MakeTableView' do
   # Pods for MakeTableView
 pod 'Firebase/Firestore'
 pod 'Firebase/Core'
+pod 'FirebaseUI/Auth'
+pod 'FirebaseUI/Google'
+pod 'FirebaseUI/Facebook'
+pod 'FirebaseUI/OAuth'
+pod 'FirebaseUI/Phone'
 
 end

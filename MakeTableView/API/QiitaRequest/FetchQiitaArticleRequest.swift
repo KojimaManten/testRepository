@@ -23,4 +23,11 @@ struct FetchQiitaArticleRequest: QiitaAPI {
     var path: String {
         return "/items"
     }
+    
+    var queryParameters: [String : Any]? {
+        guard let query = query else { return nil }
+        return ["query": "title: \(query)"]
+    }
+    
+    var query: String?
 }

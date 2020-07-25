@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,10 @@
 		D13C8E7924AF4A4E00AA16E0 /* Next.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D13C8E7824AF4A4E00AA16E0 /* Next.storyboard */; };
 		D15DBE6524AB343A00B59197 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15DBE6324AB343A00B59197 /* CustomTableViewCell.swift */; };
 		D15DBE6624AB343A00B59197 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D15DBE6424AB343A00B59197 /* CustomTableViewCell.xib */; };
+		D194041F24CC50D500A6B3CB /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = D194041E24CC50D500A6B3CB /* FacebookShare */; };
+		D194042124CC50D500A6B3CB /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = D194042024CC50D500A6B3CB /* FacebookCore */; };
+		D194042324CC50D500A6B3CB /* FacebookGamingServices in Frameworks */ = {isa = PBXBuildFile; productRef = D194042224CC50D500A6B3CB /* FacebookGamingServices */; };
+		D194042524CC50D500A6B3CB /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = D194042424CC50D500A6B3CB /* FacebookLogin */; };
 		D1AB7D0724A631A00061BB01 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AB7D0624A631A00061BB01 /* NextViewController.swift */; };
 		D1AB7D0924A63F810061BB01 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1AB7D0824A63F810061BB01 /* WebKit.framework */; };
 		D1B3D9D324B71265001FDFE2 /* QiitaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B3D9D224B71265001FDFE2 /* QiitaAPI.swift */; };
@@ -84,12 +88,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D194042524CC50D500A6B3CB /* FacebookLogin in Frameworks */,
+				D194042324CC50D500A6B3CB /* FacebookGamingServices in Frameworks */,
 				D1E063EE24A0F07100D0976C /* KingfisherSwiftUI.framework in Frameworks */,
 				D1E063E424A0F04A00D0976C /* APIKit.framework in Frameworks */,
 				D1AB7D0924A63F810061BB01 /* WebKit.framework in Frameworks */,
 				D1E063EB24A0F06300D0976C /* Kingfisher.framework in Frameworks */,
 				D1E063E824A0F05400D0976C /* BrightFutures.framework in Frameworks */,
 				63B800C1BD6EB1AF57D02E08 /* Pods_MakeTableView.framework in Frameworks */,
+				D194041F24CC50D500A6B3CB /* FacebookShare in Frameworks */,
+				D194042124CC50D500A6B3CB /* FacebookCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,12 +229,19 @@
 				D1E063E624A0F04A00D0976C /* Embed Frameworks */,
 				D1E063F024A0F0A400D0976C /* ShellScript */,
 				378CDEE44F568F5919CAC224 /* [CP] Embed Pods Frameworks */,
+				AFFE0DB5586DBB5DD2A678F5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = MakeTableView;
+			packageProductDependencies = (
+				D194041E24CC50D500A6B3CB /* FacebookShare */,
+				D194042024CC50D500A6B3CB /* FacebookCore */,
+				D194042224CC50D500A6B3CB /* FacebookGamingServices */,
+				D194042424CC50D500A6B3CB /* FacebookLogin */,
+			);
 			productName = MakeTableView;
 			productReference = D1C0419324A0E53A00FFC912 /* MakeTableView.app */;
 			productType = "com.apple.product-type.application";
@@ -255,6 +270,9 @@
 				Base,
 			);
 			mainGroup = D1C0418A24A0E53A00FFC912;
+			packageReferences = (
+				D194041D24CC50D500A6B3CB /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+			);
 			productRefGroup = D1C0419424A0E53A00FFC912 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -318,6 +336,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MakeTableView/Pods-MakeTableView-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AFFE0DB5586DBB5DD2A678F5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MakeTableView/Pods-MakeTableView-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MakeTableView/Pods-MakeTableView-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MakeTableView/Pods-MakeTableView-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D1E063F024A0F0A400D0976C /* ShellScript */ = {
@@ -564,6 +599,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D194041D24CC50D500A6B3CB /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D194041E24CC50D500A6B3CB /* FacebookShare */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D194041D24CC50D500A6B3CB /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookShare;
+		};
+		D194042024CC50D500A6B3CB /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D194041D24CC50D500A6B3CB /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
+		};
+		D194042224CC50D500A6B3CB /* FacebookGamingServices */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D194041D24CC50D500A6B3CB /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookGamingServices;
+		};
+		D194042424CC50D500A6B3CB /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D194041D24CC50D500A6B3CB /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = D1C0418B24A0E53A00FFC912 /* Project object */;
 }
