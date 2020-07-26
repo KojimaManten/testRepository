@@ -19,6 +19,7 @@
 		D194042124CC50D500A6B3CB /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = D194042024CC50D500A6B3CB /* FacebookCore */; };
 		D194042324CC50D500A6B3CB /* FacebookGamingServices in Frameworks */ = {isa = PBXBuildFile; productRef = D194042224CC50D500A6B3CB /* FacebookGamingServices */; };
 		D194042524CC50D500A6B3CB /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = D194042424CC50D500A6B3CB /* FacebookLogin */; };
+		D1A9739D24CD77A4001B78A7 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A9739C24CD77A4001B78A7 /* ButtonViewController.swift */; };
 		D1AB7D0724A631A00061BB01 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1AB7D0624A631A00061BB01 /* NextViewController.swift */; };
 		D1AB7D0924A63F810061BB01 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1AB7D0824A63F810061BB01 /* WebKit.framework */; };
 		D1B3D9D324B71265001FDFE2 /* QiitaAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1B3D9D224B71265001FDFE2 /* QiitaAPI.swift */; };
@@ -62,6 +63,7 @@
 		D13C8E7824AF4A4E00AA16E0 /* Next.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Next.storyboard; sourceTree = "<group>"; };
 		D15DBE6324AB343A00B59197 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		D15DBE6424AB343A00B59197 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
+		D1A9739C24CD77A4001B78A7 /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 		D1AB7D0624A631A00061BB01 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		D1AB7D0824A63F810061BB01 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		D1B3D9D224B71265001FDFE2 /* QiitaAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiitaAPI.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				D1C041A124A0E53D00FFC912 /* LaunchScreen.storyboard */,
 				D1C041A424A0E53D00FFC912 /* Info.plist */,
 				D13C8E7424AF495A00AA16E0 /* GoogleService-Info.plist */,
+				D1A9739C24CD77A4001B78A7 /* ButtonViewController.swift */,
 			);
 			path = MakeTableView;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				D1B3D9E124B71838001FDFE2 /* Article.swift in Sources */,
 				D1B3D9D324B71265001FDFE2 /* QiitaAPI.swift in Sources */,
 				D1171D8A24A5FF3C005F7071 /* AppDelegate.swift in Sources */,
+				D1A9739D24CD77A4001B78A7 /* ButtonViewController.swift in Sources */,
 				D1171D8924A5FF37005F7071 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

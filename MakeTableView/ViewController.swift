@@ -11,20 +11,22 @@ import Kingfisher
 import APIKit
 import Firebase
 import FirebaseUI
+import GoogleSignIn
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+    
     var authUI: FUIAuth { get { return FUIAuth.defaultAuthUI()! } }
-    //認証に使用するプロバイダの選択
-    let providers: [FUIAuthProvider] = [FUIGoogleAuth(), FUIFacebookAuth(), FUIPhoneAuth(authUI: FUIAuth.defaultAuthUI()!)]
+    
         
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        //リクエスト実行！！！
+//        //リクエスト実行！！！
         sendRequest()
         
         tableView.dataSource = self
@@ -37,9 +39,9 @@ class ViewController: UIViewController {
         let nib = UINib(nibName: "CustomTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "CustomTableViewCell")
         
-        //authUIのデリゲート設定
-        self.authUI.delegate = self
-        self.authUI.providers = providers
+//        //authUIのデリゲート設定
+//        self.authUI.delegate = self
+//        self.authUI.providers = providers
         
     }
     
@@ -64,7 +66,7 @@ class ViewController: UIViewController {
             }
     }
     //TableViewとコードの関連付け
-    @IBOutlet weak var tableView: UITableView!
+    
     
     //必要うなデータ追加
     let makerName = ["AstonMartin", "Lexus"]
@@ -168,10 +170,13 @@ extension ViewController: UISearchBarDelegate {
     }
 }
 
-extension ViewController: FUIAuthDelegate {
-    public func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
-        if error == nil {
-            self.performSegue(withIdentifier: <#T##String#>, sender: <#T##Any?#>)
-        }
-    }
-}
+//extension ViewController: FUIAuthDelegate {
+//    public func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
+//        if error == nil {
+//            let storyboard: UIStoryboard = self.storyboard!
+//            let viewController = storyboard.instantiateViewController(withIdentifier: "view2") as! ViewController
+//            self.present(viewController, animated: true)
+//            sendRequest()
+//        }
+//    }
+//}
