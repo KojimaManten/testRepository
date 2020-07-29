@@ -68,63 +68,28 @@ class ViewController: UIViewController {
                 }
             }
     }
-    //TableViewとコードの関連付け
-    
-    
-    //必要うなデータ追加
-    let makerName = ["AstonMartin", "Lexus"]
-    let astonName = ["DBX", "VANTAGE","DBS SUPERLEGGERA", "RAPIDE AMR"]
-    let lexusName = ["LS", "GS", "GSF", "ES", "IS"]
-    let astonURL = ["https://www.astonmartin.com/ja/models/dbx", "https://www.astonmartin.com/ja/models/new-vantage", "https://www.astonmartin.com/ja/models/db11", "https://www.astonmartin.com/ja/models/dbs-superleggera", "https://www.astonmartin.com/ja/models/rapide-amr"]
-    let lexusURL = ["https://lexus.jp/models/ls/", "https://lexus.jp/models/gs/", "https://lexus.jp/models/gsf/", "https://lexus.jp/models/es/", "https://lexus.jp/models/is/"]
-    
 }
 
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     //rowの設定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            guard let articles = articles else { return 0 }
-                return articles.count
-            
-        case 1:
-            return lexusName.count
-        default:
-            return 0
-        }
+        guard let articles = articles else { return 0 }
+        return articles.count
     }
+    
     //cellの中身を設定
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //let cell = UITableViewCell()
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell", for: indexPath) as! CustomTableViewCell
         //cell.thumbView.image = UIImage(named: "")
         cell.thumbView.kf.setImage(with: URL(string: "https://pbs.twimg.com/profile_images/1201406146822557696/ewFFvnAa_400x400.jpg")!)
-        
-        
-        switch indexPath.section {
-        case 0:
-            //cell.textLabel?.text = astonName[indexPath.row]
-            if let articles = articles {
-                cell.titleLabel.text = articles[indexPath.row].title
-            }
-        case 1:
-           // cell.textLabel?.text = lexusName[indexPath.row]
-            cell.titleLabel.text = lexusName[indexPath.row]
-        default:
-            return cell
+        if let articles = articles {
+            cell.titleLabel.text = articles[indexPath.row].title
         }
         return cell
     }
-    //sectionの数追加
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return makerName.count
-    }
-    //sectionのタイトル追加
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return makerName[section]
-    }
+    
     //セルがタップされたときの処理を追加（画面遷移）
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //Next.Storyboardをインスタンス化
@@ -134,16 +99,9 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             return
         }
         //画面遷移時に値を渡す
-        switch indexPath.section {
-        case 0:
-            if let articles = articles {
-                nextViewController.nextURL = articles[indexPath.row].url
-            }
-        case 1:
-            nextViewController.nextURL = lexusURL[indexPath.row]
-        default:
-            return
-        }
+       if let articles = articles {
+           nextViewController.nextURL = articles[indexPath.row].url
+       }
         //画面遷移実行
         navigationController?.pushViewController(nextViewController, animated: true)
     }
