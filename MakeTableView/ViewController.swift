@@ -18,31 +18,34 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
+        var authUI: FUIAuth { get { return FUIAuth.defaultAuthUI()! } }
+        //認証に使用するプロバイダの選択
+        let providers: [FUIAuthProvider] = [FUIGoogleAuth(), FUIFacebookAuth(), FUIPhoneAuth(authUI: FUIAuth.defaultAuthUI()!)]
     
-    var authUI: FUIAuth { get { return FUIAuth.defaultAuthUI()! } }
-    
-        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-//        //リクエスト実行！！！
-        sendRequest()
         
         tableView.dataSource = self
         tableView.delegate = self
         
         searchBar.delegate = self
         
+        //authUIのデリゲート設定
+        self.authUI.delegate = self
+        self.authUI.providers = providers
+        
         //Nibをコードで定義
         //カスタムセルを登録
         let nib = UINib(nibName: "CustomTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "CustomTableViewCell")
         
-//        //authUIのデリゲート設定
-//        self.authUI.delegate = self
-//        self.authUI.providers = providers
+        //認証画面を最初に出す
+        let authViewController = authUI.authViewController()
+        self.present(authViewController, animated: true, completion: nil)
         
+        //リクエスト実行
+        sendRequest()
     }
     
     
@@ -168,6 +171,16 @@ extension ViewController: UISearchBarDelegate {
             searchBar.endEditing(true)
         }
     }
+}
+
+extension ViewController: FUIAuthDelegate {
+//    private func authUI(_ authUI: FUIAuth, didSignInWith user: User?, error: Error?) {
+//        if error == nil {
+//            print("あいうえお")
+//        } else {
+//            print("かきくけこ")
+//        }
+//    }
 }
 
 //extension ViewController: FUIAuthDelegate {
